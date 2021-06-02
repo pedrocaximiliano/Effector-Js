@@ -1,21 +1,24 @@
 import * as React from "react";
 import { useStore } from "effector-react";
 
-import $store from "../store/todoAdd/todoAddStore";
+import $store from "../../store/todo/todoStore";
 
-import { update, remove } from "../store/todoAdd/todoAddEvents";
+import { remove } from "../../store/todo/todoEvents";
 
 function TodoList() {
+
   const store = useStore($store);
+  const { todos } = store;
+
   return (
     <>
-      {store.todos.map((todo) => (
+      {todos.map((todo) => (
         <div key={todo.id}>
           <input
             value={todo.text}
-            onChange={(evt) => update({ id: todo.id, text: evt.target.value })}
+            className='input'
           />
-          <button onClick={() => remove(todo.id)}>Delete</button>
+          <button className='button' onClick={() => remove(todo.id)}>Delete</button>
         </div>
       ))}
     </>

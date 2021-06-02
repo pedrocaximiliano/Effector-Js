@@ -1,10 +1,22 @@
-import React from "react"
-import { screen } from "@testing-library/react"
-import { render } from "./test-utils"
+import { shallow } from 'enzyme';
+import React from 'react';
 import { App } from "./App"
+import TodoAdd from './components/TodoAdd/todoAdd';
+import TodoList from './components/TodoList/todoList';
 
-test("renders learn react link", () => {
-  render(<App />)
-  const linkElement = screen.getByText(/learn chakra/i)
-  expect(linkElement).toBeInTheDocument()
+describe('App', () => {
+  let wrapperDefault: any;
+  beforeEach(() => {
+    wrapperDefault = shallow(<App />);
+  })
+  it('should render a TodoAdd', () => {
+    expect(wrapperDefault.find(TodoAdd)).toHaveLength(1);
+  });
+  it('should render a TodoList', () => {
+    expect(wrapperDefault.find(TodoList)).toHaveLength(1);
+  });
+  it('should render a button', () => {
+    wrapperDefault.find('button').simulate('click')
+    expect(wrapperDefault.find('button')).toHaveLength(1);
+  });
 })

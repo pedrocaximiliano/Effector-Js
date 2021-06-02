@@ -1,35 +1,16 @@
 import * as React from "react";
-import TodoAdd from "./components/todoAdd";
-import TodoList from "./components/todoList";
+import TodoAdd from "./components/TodoAdd/todoAdd";
+import TodoList from "./components/TodoList/todoList";
 
+import { removeAll } from "./store/todo/todoEvents";
 
 export function App() {
   return (
-    <div style={{
-      width: ' 50%',
-      margin: '60px auto',
-      padding: '30px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      backgroundColor: 'blanchedalmond',
-      fontSize: 50
-    }}>
-      Item List
+    <div className='root'>
+      Items
       <TodoAdd />
       <TodoList />
-      <div style={{
-        width: '50%',
-        display: 'flex',
-        justifyContent: 'flex-end',
-      }}>
-        <button style={{
-          marginTop: '50px'
-        }}>
-          delete All
-    </button>
-      </div>
-
+      <button className='button' onClick={() => removeAll(null)}>Delete all</button>
     </div>
   );
 }

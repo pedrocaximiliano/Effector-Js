@@ -6,9 +6,15 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.23",
     "@types/react": "^17.0.6",
     "effector": "^21.8.4",
     "effector-react": "^21.2.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "eslint-config-airbnb-typescript": "^11.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "@types/react-dom": "^16.9.0",
@@ -18,6 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "coverage": "yarn test -- --coverage --watchAll=false",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -39,5 +46,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/src/index.tsx"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/preset-react": "^7.13.13"
   }
 }
