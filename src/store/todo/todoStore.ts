@@ -2,7 +2,7 @@ import { createDomain } from "effector";
 import { Todo } from "./todoState";
 import { setNewItem, remove, addTodo, removeAll } from "./todoEvents";
 
-interface Store {
+export interface Store {
   todos: Todo[];
   newItem: string;
 }
@@ -17,9 +17,7 @@ export const addTodoToList = (todos: Todo[], text: string): Todo[] => [
 ];
 
 export const getTodos = todoStoreDomain.effect(async (url: string) => {
-  const req = await fetch(url);
-  console.log(req);
-  return req.json();
+  return await (await fetch(url)).json();
 });
 
 export const removeTodo = (todos: Todo[], id: number): Todo[] =>
@@ -29,15 +27,6 @@ const initialState = {
   todos: [],
   newItem: "",
 } as Store;
-
-getTodos.done.watch(({ params, result }) => {
-  console.log("Call with params", params);
-  console.log("resolved with value", result);
-});
-
-getTodos.fail.watch(({ params, error }) => {
-  console.log("4545454", error);
-});
 
 const storeDefault = todoStoreDomain
   .store(initialState)

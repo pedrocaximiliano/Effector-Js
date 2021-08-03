@@ -7,7 +7,7 @@ import { removeAll } from "./store/todo/todoEvents";
 export function App() {
   return (
     <div className='root'>
-      Items
+      Courses
       <TodoAdd />
       <TodoList />
       <button className='button' onClick={() => removeAll(null)}>Delete all</button>

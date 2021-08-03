@@ -4418,6 +4418,11 @@ detect-newline@^3.0.0:
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-3.1.0.tgz#576f5dfc63ae1a192ff192d8ad3af6308991b651"
   integrity sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==
 
+detect-node@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
+  integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
+
 detect-node@^2.0.4:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.1.0.tgz#c9c70775a49c3d03bc2c06d9a73be550f978f8b1"
@@ -4630,6 +4635,26 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+
+effector-inspector@^0.4.1:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/effector-inspector/-/effector-inspector-0.4.2.tgz#03380e947ab70a566ee58c49ffb765cf2f99afe1"
+  integrity sha512-tW6UlfV3Yz3cWJFje44vwLR4RkyBfEa5wkbyc6Zgn5mJNvRUncjGgMfBkHGldeu8xkU/aC5qDaQUlOxbT5TOvA==
+  dependencies:
+    foliage "^0.106.0"
+    forest "^0.19.6"
+
+effector-logger@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/effector-logger/-/effector-logger-0.10.0.tgz#b730aebb6f3d04ea1cb3471da2ce4d8554f76b98"
+  integrity sha512-TgWt8k22VlWmHjMCSq3BDWsQJ4lXOU/2y7O7/JOeoj1g4ponyR0jgxPwNPzr98A5MBMHtg3otzSaSpYWDE6wfw==
+  dependencies:
+    "@babel/helper-module-imports" "^7.12.13"
+    "@babel/traverse" "^7.13.0"
+    detect-node "2.0.4"
+    effector-inspector "^0.4.1"
+    just-debounce-it "^1.1.0"
+    set-value "3.0.1"
 
 effector-react@^21.2.1:
   version "21.3.2"
@@ -5575,6 +5600,13 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+foliage@^0.106.0:
+  version "0.106.0"
+  resolved "https://registry.yarnpkg.com/foliage/-/foliage-0.106.0.tgz#5fa4dfa820d7b76b450187268f07e5e5e0e22993"
+  integrity sha512-rmxzH3kR1MM9gXJC4RESnW3B8Rztq4Jqe4nf8e2PGbyKGOfbPVLjnt3tmqiQomJm9uU6e/OWHxSdpn5lIlGUgw==
+  dependencies:
+    stylis "^4.0.0"
+
 follow-redirects@^1.0.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
@@ -5584,6 +5616,11 @@ for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
   integrity sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=
+
+forest@^0.19.6:
+  version "0.19.6"
+  resolved "https://registry.yarnpkg.com/forest/-/forest-0.19.6.tgz#dcae2f4c96f21229a1243732af952eeadc15f868"
+  integrity sha512-pMj2Murs7JfSLGfjtcpBF++XVdL044weGttKEF39lNP0TIs1/S1yFCla5RWY9GfepVeK1FDQ87ORYBTX3/wd0w==
 
 forever-agent@~0.6.1:
   version "0.6.1"
@@ -7416,6 +7453,11 @@ jsprim@^1.2.2:
   dependencies:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
+
+just-debounce-it@^1.1.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/just-debounce-it/-/just-debounce-it-1.5.0.tgz#2276448332dd5925e825ba3c524a71da707bf628"
+  integrity sha512-itSWJS5d2DTSCizVJ2Z0Djx/dGmUGfZe7WNfUfVP23+htGcIcPHbEjL4eB8ljojTs/+oYwLexImRRCP0A2WXjA==
 
 killable@^1.0.1:
   version "1.0.1"
@@ -10550,6 +10592,13 @@ set-blocking@^2.0.0:
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha1-BF+XgtARrppoA93TgrJDkrPYkPc=
 
+set-value@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/set-value/-/set-value-3.0.1.tgz#52c82af7653ba69eb1db92e81f5cdb32739b9e95"
+  integrity sha512-w6n3GUPYAWQj4ZyHWzD7K2FnFXHx9OTwJYbWg+6nXjG8sCLfs9DGv+KlqglKIIJx+ks7MlFuwFW2RBPb+8V+xg==
+  dependencies:
+    is-plain-object "^2.0.4"
+
 set-value@^2.0.0, set-value@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/set-value/-/set-value-2.0.1.tgz#a18d40530e6f07de4228c7defe4227af8cad005b"
@@ -11125,6 +11174,11 @@ stylehacks@^4.0.0:
     browserslist "^4.0.0"
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
+
+stylis@^4.0.0:
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.0.10.tgz#446512d1097197ab3f02fb3c258358c3f7a14240"
+  integrity sha512-m3k+dk7QeJw660eIKRRn3xPF6uuvHs/FFzjX3HQ5ove0qYsiygoAhwn5a3IYKaZPo5LrYD0rfVmtv1gNY1uYwg==
 
 supports-color@^5.3.0:
   version "5.5.0"
