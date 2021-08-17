@@ -1,8 +1,8 @@
 import * as React from "react";
-import TodoAdd from "./components/TodoAdd/todoAdd";
-import TodoList from "./components/TodoList/todoList";
+import TodoAdd from "./components/TodoAdd/TodoAdd";
+import TodoList from "./components/TodoList/TodoList";
 
-import { removeAll } from "./store/todo/todoEvents";
+import { removeAll } from "./store/todo/TodoEvents";
 
 export function App() {
   return (

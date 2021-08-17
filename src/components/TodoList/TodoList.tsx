@@ -1,9 +1,9 @@
 import * as React from "react";
-import { useStore, useStoreMap } from "effector-react";
+import { useStore } from "effector-react";
 
-import $store, { getTodos } from "../../store/todo/todoStore";
+import $store, { getTodos } from "../../store/todo/TodoStore";
 
-import { remove } from "../../store/todo/todoEvents";
+import { remove } from "../../store/todo/TodoEvents";
 
 function TodoList() {
 
@@ -26,6 +26,7 @@ function TodoList() {
           <input
             value={todo.text}
             className='input'
+            onChange={() => { }}
           />
           <button className='button' onClick={() => remove(todo.id)}>Delete</button>
         </div>

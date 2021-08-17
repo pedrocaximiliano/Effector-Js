@@ -1,12 +1,13 @@
-import { createDomain } from "effector";
-import { Todo } from "./todoState";
-import { setNewItem, remove, addTodo, removeAll } from "./todoEvents";
+import { createDomain } from "effector-logger";
+import { Todo } from "./TodoState";
+import { setNewItem, remove, addTodo, removeAll } from "./TodoEvents";
 
-export interface Store {
+export interface IStore {
   todos: Todo[];
   newItem: string;
 }
-const todoStoreDomain = createDomain();
+
+const myDomain = createDomain();
 
 export const addTodoToList = (todos: Todo[], text: string): Todo[] => [
   ...todos,
@@ -16,8 +17,8 @@ export const addTodoToList = (todos: Todo[], text: string): Todo[] => [
   },
 ];
 
-export const getTodos = todoStoreDomain.effect(async (url: string) => {
-  return await (await fetch(url)).json();
+export const getTodos = myDomain.effect(async (url: string) => {
+  return (await fetch(url)).json();
 });
 
 export const removeTodo = (todos: Todo[], id: number): Todo[] =>
@@ -26,15 +27,15 @@ export const removeTodo = (todos: Todo[], id: number): Todo[] =>
 const initialState = {
   todos: [],
   newItem: "",
-} as Store;
+} as IStore;
 
-const storeDefault = todoStoreDomain
+const storeDefault = myDomain
   .store(initialState)
   .on(getTodos.doneData, (state, todos) => ({
     ...state,
     todos,
   }))
-  .on(getTodos.failData, () => ({ newItem: "", todos: [] } as Store))
+  .on(getTodos.failData, () => ({ newItem: "", todos: [] } as IStore))
   .on(remove, (state, id) => ({
     ...state,
     todos: removeTodo(state.todos, id),

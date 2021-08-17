@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { App } from "./App"
-import TodoAdd from './components/TodoAdd/todoAdd';
-import TodoList from './components/TodoList/todoList';
+import TodoAdd from './components/TodoAdd/TodoAdd';
+import TodoList from './components/TodoList/TodoList';
 
 describe('App', () => {
   let wrapperDefault: any;

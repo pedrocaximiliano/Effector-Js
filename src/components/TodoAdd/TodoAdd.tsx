@@ -1,29 +1,17 @@
 import * as React from "react";
 import { useStore } from "effector-react";
-
-
-import $store, { getTodos } from "../../store/todo/todoStore";
-import { setNewItem, addTodo } from "../../store/todo/todoEvents";
-import { createEvent } from "effector";
+import $store, { getTodos } from "../../store/todo/TodoStore";
+import { setNewItem, addTodo } from "../../store/todo/TodoEvents";
+import { createEvent } from "effector-logger";
 
 const TodoAdd = () => {
   const store = useStore($store);
   const { newItem } = store;
-  const [teste, setTeste] = React.useState<string>()
 
   const showRules = createEvent<string>();
 
-  const stopShowRules = showRules.watch(name => setTeste(name))
-  if (teste) {
-    return <div>
-      <div id="myModal" className="modal">
-        <div className="modal-content" >
-          <button onClick={() => setTeste('')} >&times;</button>
-          <p>Some text in the Modal..</p>
-        </div>
-      </div>
-    </div>
-  }
+  const stopShowRules = showRules.watch(name => window.alert('To add courses just type the name and select the add button',))
+
   return (
     <>
       <div>
@@ -32,8 +20,8 @@ const TodoAdd = () => {
             getTodos("http://demo7315882.mockable.io/courses"
             )
           }>Highlights</button>
-          <button className='button' onClick={() => showRules('usuário')}>exibir regras</button>
-          <button className='button' onClick={() => stopShowRules()}>não exibir </button>
+          <button className='button' onClick={() => showRules('user')}>show rules</button>
+          <button className='button' onClick={() => stopShowRules()}>no show </button>
         </div>
         <input
           placeholder="New item"
