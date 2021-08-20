@@ -42,7 +42,7 @@ describe("TODO", () => {
   });
 
   it("should render removeTodo method", () => {
-    removeTodo([{ text: "mesa", id: 1 }], 0);
+    removeTodo([{ text: "react", id: 1 }], 0);
     expect(store.getState()).toEqual(responseRemoveAll);
   });
 

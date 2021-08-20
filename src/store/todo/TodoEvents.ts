@@ -1,4 +1,4 @@
-import { createEvent } from "effector-logger";
+import { createEvent } from "effector-logger/macro";
 
 export const setNewItem = createEvent<string>("setNewItem");
 export const addTodo = createEvent<void>("addTodo");

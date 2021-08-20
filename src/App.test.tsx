@@ -12,9 +12,7 @@ describe('App', () => {
   it('should render a TodoAdd', () => {
     expect(wrapperDefault.find(TodoAdd)).toHaveLength(1);
   });
-  it('should render a TodoList', () => {
-    expect(wrapperDefault.find(TodoList)).toHaveLength(1);
-  });
+
   it('should render a button', () => {
     wrapperDefault.find('button').simulate('click')
     expect(wrapperDefault.find('button')).toHaveLength(1);

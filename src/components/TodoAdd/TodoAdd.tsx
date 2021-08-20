@@ -2,7 +2,8 @@ import * as React from "react";
 import { useStore } from "effector-react";
 import $store, { getTodos } from "../../store/todo/TodoStore";
 import { setNewItem, addTodo } from "../../store/todo/TodoEvents";
-import { createEvent } from "effector-logger";
+import { createEvent } from "effector-logger/macro";
+import TodoList from "../TodoList/TodoList";
 
 const TodoAdd = () => {
   const store = useStore($store);
@@ -10,7 +11,7 @@ const TodoAdd = () => {
 
   const showRules = createEvent<string>();
 
-  const stopShowRules = showRules.watch(name => window.alert('To add courses just type the name and select the add button',))
+  const stopShowRules = showRules.watch(name => window.alert(`Hey, ${name}, for you add Items just type the and select the add button`,))
 
   return (
     <>
@@ -31,6 +32,7 @@ const TodoAdd = () => {
         />
         <button className='button' onClick={() => addTodo()}>Add Todo</button>
       </div>
+      <TodoList />
     </>
   );
 }

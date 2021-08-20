@@ -9,7 +9,7 @@ describe('TodoList', () => {
   let wrapperDefault: any;
   const todo = [{
     id: 1,
-    text: 'pen',
+    text: 'Flutter',
   }]
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('TodoList', () => {
   })
   it('should render a TodoList', () => {
     wrapperDefault.find('button').simulate('click')
-    expect(wrapperDefault.find('input').props().value).toBe('pen')
+    expect(wrapperDefault.find('input').props().value).toBe('Flutter')
   });
 
   it('should call onchange props', () => {
