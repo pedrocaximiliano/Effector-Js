@@ -24,13 +24,23 @@ const addTodoListMock = [
 
 describe("TODO", () => {
   it("should call addTodo", () => {
-    const resultAddTodo = addTodo(ResponseTodoMock);
-    expect(resultAddTodo).toEqual(ResponseTodoMock);
+    const resultAddTodo = addTodo();
+    expect(resultAddTodo).toBeUndefined();
   });
   it("should call addTodoToList", () => {
+    const mockResponse = [
+      {
+        id: 1,
+        text: "4",
+      },
+      {
+        id: 2,
+        text: 'newItem'
+      },
+    ];
     store.setState(addTodoListMock);
-    addTodoToList(addTodoListMock, "newTodo");
-    expect(store.getState()).toEqual(addTodoListMock);
+    const response = addTodoToList(addTodoListMock, "newItem");
+    expect(response).toEqual(mockResponse);
   });
   it("should remove all TODOS", () => {
     removeAll(null);

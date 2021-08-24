@@ -1,8 +1,6 @@
 import * as React from "react";
 import { useStore } from "effector-react";
-
 import $store, { getTodos } from "../../store/todo/TodoStore";
-
 import { remove } from "../../store/todo/TodoEvents";
 
 function TodoList() {

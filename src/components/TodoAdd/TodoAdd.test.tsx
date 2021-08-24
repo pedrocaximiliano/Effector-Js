@@ -9,9 +9,15 @@ describe('TodoAdd', () => {
   let wrapperDefault: any;
   window.alert = jest.fn();
   beforeEach(() => {
-    (useStore as jest.Mock).mockReturnValueOnce({ newItem: 'React' })
+    (useStore as jest.Mock).mockReturnValue({ newItem: 'React' })
     wrapperDefault = shallow(<TodoAdd />);
   })
+
+  it('should change input value', () => {
+    const changed = { target: { value: 'React' } };
+    const resp = wrapperDefault.find('input').props().onChange(changed)
+    expect(resp).toBe('React')
+  });
   it('should click in button', () => {
     wrapperDefault.find('button').at(0).simulate('click')
     expect(wrapperDefault.find('input').props().value).toBe('React')
@@ -27,10 +33,5 @@ describe('TodoAdd', () => {
   it('should click in button stopShowRules', async () => {
     wrapperDefault.find('button').at(3).simulate('click')
     expect(wrapperDefault.find('input').props().value).toBe('React')
-  });
-  it('should change input value', () => {
-    const changed = { target: { value: 'React' } };
-    const resp = wrapperDefault.find('input').props().onChange(changed)
-    expect(resp).toBe('React')
   });
 })
